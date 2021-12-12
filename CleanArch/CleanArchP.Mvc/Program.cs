@@ -1,5 +1,6 @@
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
+using CleanArchP.Mvc.Configurations;
 using CleanArchP.Mvc.Data;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
@@ -30,7 +31,7 @@ builder.Services.AddDbContext<UniversityDBContext>(options =>
 });
 
 builder.Services.AddMediatR(typeof(Program));
-
+builder.Services.RegisterAutoMapper();
 RegisterServices(builder.Services);
 
 var app = builder.Build();
