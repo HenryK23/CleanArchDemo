@@ -1,6 +1,7 @@
 using CleanArch.Infra.Data.Context;
 using CleanArch.Infra.IoC;
 using CleanArchP.Mvc.Data;
+using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,6 +28,8 @@ builder.Services.AddDbContext<UniversityDBContext>(options =>
 {
     options.UseSqlServer(connectionStringUni);
 });
+
+builder.Services.AddMediatR(typeof(Program));
 
 RegisterServices(builder.Services);
 
